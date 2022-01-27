@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd  
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd  
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+
+
+<!--   core配置-->
+<!--    <bean class="base.SimpleBean">-->
+<!--        <property name="student" ref="student"/>-->
+<!--    </bean>-->
+<!--    <bean class="base.SimpleBeanPostProcessor"/>-->
+<!--    <bean id="student" class="base.Student" primary="true" autowire="default" />-->
+<!--    <bean id="student" class="base.Student">-->
+<!--        <property name="name" value="skywalker" />-->
+<!--        <property name="age" value="30" />-->
+<!--    </bean>-->
+
+<!--    <bean class="base.SimpleBeanFactoryPostProcessor" />-->
+
+<!--    Spring-context-->
+<!--    开启注解(使得Autowired等注解可以使用) 如果配置了context:component-scan其实就没有必要配置annotation-config 了。-->
+<context:annotation-config/>
+<!--    开启扫描，自动生成bean，不用在xml中配置 @Component-->
+<!--    <context:component-scan base-package="base">-->
+<!--        <context:exclude-filter type="annotation" expression="javax.annotation.Resource" />-->
+<!--    </context:component-scan>-->
+
+<!--    <context:property-override location="property.properties" />-->
+<!--    <bean id="student" class="base.Student">-->
+<!--        <property name="name" value="${student.name}" />-->
+<!--    </bean>-->
+<!--    <context:property-override  properties-ref="property" />-->
+
+<!--    <bean id="property" class="java.util.Properties">-->
+<!--        <constructor-arg>-->
+<!--            <props>-->
+<!--                <prop key="student.name">cat</prop>-->
+<!--            </props>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+<!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">-->
+<!--        <property name="initAnnotationType" value="annotation.Init" />-->
+<!--    </bean>-->
+
+
+<!--   Aop配置-->
+<!--    <bean class="aop.SimpleAopBean" />-->
+<!--    <bean id="simpleMethodInterceptor" class="aop.SimpleMethodInterceptor" />-->
+
+<!--    <aop:config expose-proxy="true">-->
+<!--    <aop:config >-->
+<!--        <aop:advisor advice-ref="simpleMethodInterceptor"-->
+<!--                     pointcut="execution(* aop.SimpleAopBean.*(..))" />-->
+<!--&lt;!&ndash;        <aop:aspect ref="simpleMethodInterceptor"  >&ndash;&gt;-->
+<!--&lt;!&ndash;            <aop:pointcut id="test" expression="execution(* aop.SimpleAopBean.*(..))"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <aop:before method="before2" pointcut-ref="test"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </aop:aspect>&ndash;&gt;-->
+<!--    </aop:config>-->
+<!--    <aop:aspectj-autoproxy proxy-target-class="true" />-->
+<!--    <bean class="base.aop.AopDemo" />-->
+<!--    <bean class="base.aop.annotation.AspectDemo" />-->
+
+<!--    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&amp;serverTimezone=UTC&amp;useSSL=false" />-->
+<!--        <property name="username" value="root" />-->
+<!--        <property name="password" value="" />-->
+<!--    </bean>-->
+<!--    <bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
+<!--        <property name="url" value="jdbc:mysql://192.168.7.231:3306/smjjtest?useUnicode=true&amp;characterEncoding=utf8&amp;allowMultiQueries=true" />-->
+<!--        <property name="username" value="root" />-->
+<!--        <property name="password" value="Sckr@2002" />-->
+<!--    </bean>-->
+<!--    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--    </bean>-->
+<!--    <tx:annotation-driven transaction-manager="transactionManager"/>-->
+<!--    <bean id="nestedBean" class="base.transaction.NestedBean" />-->
+<!--    <bean id="transactionBean" class="base.transaction.TransactionBean">-->
+<!--        <property name="nestedBean" ref="nestedBean" />-->
+<!--        <property name="transactionBean" ref="transactionBean" />-->
+<!--    </bean>-->
+<!--    <tx:advice id="txAdvice" transaction-manager="transactionManager">-->
+<!--        <tx:attributes>-->
+<!--            <tx:method name="get*" read-only="true" propagation="NOT_SUPPORTED"/>-->
+<!--            <tx:method name="find*" read-only="true" propagation="NOT_SUPPORTED"/>-->
+<!--            <tx:method name="*" propagation="REQUIRED"/>-->
+<!--        </tx:attributes>-->
+<!--    </tx:advice>-->
+<!--    <aop:config>-->
+<!--        <aop:pointcut expression="execution(* base.service..*.*(..))" id="transaction"/>-->
+<!--        <aop:advisor advice-ref="txAdvice" pointcut-ref="transaction"/>-->
+<!--&lt;!&ndash;        <aop:aspect ref="" />&ndash;&gt;-->
+<!--    </aop:config>-->
+
+
+
+<!--    spring-task-->
+<!--    <task:annotation-driven />-->
+    <!--    <task:scheduler id="scheduler" pool-size="3" />-->
+    <bean id="task" class="task.Task"/>
+<!--    <task:scheduled-tasks scheduler="scheduler">-->
+    <task:scheduled-tasks >
+        <task:scheduled ref="task" method="print" cron="0/1 * * * * ?"/>
+    </task:scheduled-tasks>
+</beans>
