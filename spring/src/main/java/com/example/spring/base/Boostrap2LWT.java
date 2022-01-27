@@ -1,6 +1,6 @@
-package base;
+package com.example.spring.base;
 
-import base.lwt.ConfigurableTest;
+import com.example.spring.base.lwt.ConfigurableTest;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Boostrap2LWT {

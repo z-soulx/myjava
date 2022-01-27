@@ -1,8 +1,6 @@
-package base;
+package com.example.spring.base;
 
-import base.aop.AopDemo;
-import base.lwt.LwtConfig;
-import base.transaction.TransactionBean;
+import com.example.spring.base.transaction.TransactionBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Boostrap {

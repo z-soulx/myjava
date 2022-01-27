@@ -1,7 +1,7 @@
 package task;
 
-import base.SimpleBean;
-import base.SimpleBeanFactoryPostProcessor;
+import com.example.spring.base.SimpleBean;
+import com.example.spring.base.SimpleBeanFactoryPostProcessor;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Boostrap {

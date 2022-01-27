@@ -1,4 +1,4 @@
-package base;
+package com.example.spring.base;
 
 /**
  * @author skywalker

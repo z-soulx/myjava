@@ -1,4 +1,4 @@
-package cache;
+package com.example.spring.cache;
 
 import com.google.common.cache.*;
 import com.google.common.util.concurrent.ListenableFuture;

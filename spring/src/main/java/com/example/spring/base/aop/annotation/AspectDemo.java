@@ -1,4 +1,4 @@
-package base.aop.annotation;
+package com.example.spring.base.aop.annotation;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -10,7 +10,7 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class AspectDemo {
 
-    @Pointcut("execution(void base.aop.AopDemo.send(..))")
+    @Pointcut("execution(void com.example.spring.aop.AopDemo.send(..))")
     public void beforeSend() {}
 
     @Before("beforeSend()")

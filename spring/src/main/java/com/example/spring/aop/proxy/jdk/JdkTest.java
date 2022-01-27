@@ -1,7 +1,9 @@
-package aop.proxy.jdk;
+package com.example.spring.aop.proxy.jdk;
 
 
 
+import com.example.spring.aop.proxy.jdk.JdkProxy;
+import com.example.spring.aop.proxy.jdk.JdkStudent;
 import java.lang.reflect.Field;
 import java.lang.reflect.Proxy;
 
@@ -19,7 +21,7 @@ public class JdkTest {
      */
     public static void main(String[] args) throws IllegalAccessException, NoSuchFieldException {
         //生成$Proxy0的class文件
-//         System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
+         System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
          //新版JDK
         System.getProperties().put("jdk.proxy.ProxyGenerator.saveGeneratedFiles", "true");
            //包一定要导入jdk的包Proxy

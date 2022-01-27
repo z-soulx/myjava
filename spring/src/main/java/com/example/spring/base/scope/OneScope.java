@@ -1,6 +1,6 @@
-package base.scope;
+package com.example.spring.base.scope;
 
-import base.Student;
+import com.example.spring.base.Student;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.config.Scope;
 

@@ -1,4 +1,4 @@
-package base.service;
+package com.example.spring.base.service;
 
 /**
  * @program: spring

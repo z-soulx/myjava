@@ -1,6 +1,6 @@
-package java_config;
+package com.example.spring.java_config;
 
-import base.SimpleBean;
+import com.example.spring.base.SimpleBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,16 +8,16 @@ import org.springframework.context.annotation.EnableLoadTimeWeaving;
 import org.springframework.context.annotation.Import;
 
 /**
- * {@link base.SimpleBean}配置
+ * {@link com.example.spring.base.SimpleBean}配置
  *
  * @author skywalker
  */
 @Configuration
-@Import(StudentConfig.class)
+@Import(java_config.StudentConfig.class)
 public class SimpleBeanConfig {
 
     @Autowired
-    private StudentConfig studentConfig;
+    private java_config.StudentConfig studentConfig;
 
     @Bean
     public SimpleBean simpleBean() {

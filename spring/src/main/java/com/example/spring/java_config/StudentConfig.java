@@ -1,6 +1,6 @@
 package java_config;
 
-import base.Student;
+import com.example.spring.base.Student;
 import org.springframework.context.annotation.*;
 import org.springframework.core.type.AnnotationMetadata;
 

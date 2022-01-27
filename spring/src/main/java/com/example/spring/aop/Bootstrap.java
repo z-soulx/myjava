@@ -1,6 +1,6 @@
-package aop;
+package com.example.spring.aop;
 
-import base.aop.AopDemo;
+import com.example.spring.base.aop.AopDemo;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**

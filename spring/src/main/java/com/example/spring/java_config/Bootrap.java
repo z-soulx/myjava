@@ -1,6 +1,6 @@
-package java_config;
+package com.example.spring.java_config;
 
-import base.SimpleBean;
+import com.example.spring.base.SimpleBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Arrays;

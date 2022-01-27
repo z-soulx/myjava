@@ -1,4 +1,4 @@
-package aop.proxy.cglib;
+package com.example.spring.aop.proxy.cglib;
 
 /**
  * @program: spring

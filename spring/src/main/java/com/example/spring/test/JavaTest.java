@@ -1,6 +1,6 @@
 package com.example.spring.test;
 
-import base.Student;
+import com.example.spring.base.Student;
 import org.junit.Test;
 
 import java.beans.BeanInfo;

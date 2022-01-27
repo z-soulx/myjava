@@ -1,4 +1,6 @@
-package aop;
+package com.example.spring.aop;
+
+import com.example.spring.aop.SimpleAopBean;
 
 /**
  * @author skywalker

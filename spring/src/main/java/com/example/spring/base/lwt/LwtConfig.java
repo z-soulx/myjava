@@ -1,4 +1,4 @@
-package base.lwt;
+package com.example.spring.base.lwt;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableLoadTimeWeaving;

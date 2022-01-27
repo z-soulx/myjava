@@ -1,4 +1,4 @@
-package base;
+package com.example.spring.base;
 
 import annotation.Init;
 import org.springframework.beans.factory.annotation.Autowired;

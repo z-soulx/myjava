@@ -1,4 +1,4 @@
-package base.transaction;
+package com.example.spring.base.transaction;
 
 import org.springframework.context.ApplicationEvent;
 

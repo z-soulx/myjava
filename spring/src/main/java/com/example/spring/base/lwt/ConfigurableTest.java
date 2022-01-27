@@ -1,6 +1,6 @@
-package base.lwt;
+package com.example.spring.base.lwt;
 
-import base.SimpleBean;
+import com.example.spring.base.SimpleBean;
 import org.springframework.beans.factory.annotation.Configurable;
 
 import javax.annotation.Resource;

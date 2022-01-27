@@ -1,4 +1,4 @@
-package base.transaction;
+package com.example.spring.base.transaction;
 
 import javafx.application.Application;
 import org.springframework.beans.factory.annotation.Autowired;
