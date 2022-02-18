@@ -1,8 +1,6 @@
 package com.example.javabase.algorithm.Leecode;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.EnumSet;
 import org.junit.Test;
 
 /**
@@ -15,28 +13,44 @@ public class T extends Solution {
 
 
 	public static void main(String[] args) {
-		int[][] strings = stringToIntArray(
-				"[[1,2,3],[4,5,6],[7,8,9]]", 3, 3);
-		;
 
-		System.out.println(-3 / 2);
+
 	}
 
 	@Test
 	public void test() {
-		System.out.println(lengthOfLastWord("Hello World"
-		));
+		int[] a = {0, 0, 0, 0,0, 1};
+		int[] b = {1, 0, 0, 0,0, 0};
+
+		System.out.println(s(a,b));
 
 	}
-	public int lengthOfLastWord(String s) {
-		int count = 0;
-		for (int i = 0; i < s.length(); i++) {
-			if ((s.charAt(i) <= 'Z' && s.charAt(i) >= 'A')  ||  (s.charAt(i) <= 'z' && s.charAt(i) >= 'a')) {
-				count++;
-			}
+
+	public int s(int[] a, int[] b) {
+		int[][] dp = new int[a.length][b.length];
+    for (int k = 0; k < a.length; k++) {
+    	if (a[0] == b[k])  {
+    		dp[0][k] = 1;
+	    }
+    	if (a[k] == b[0]) {
+    		dp[k][0] = 1;
+	    }
 		}
-		return count;
+   int max = 0;
+    for (int i = 1; i < a.length; i++) {
+    	for (int j = 1; j < b.length; j++) {
+    		 if (a[i] == b[j]) {
+			     dp[i][j] = dp[i - 1][j - 1] + 1;
+		     } else  {
+    		 	dp[i][j] = 0;
+		     }
+		    max = Math.max(max,dp[i][j]);
+	    }
+    }
+    return max;
 	}
+
+
 
 
 }

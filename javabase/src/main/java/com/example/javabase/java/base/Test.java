@@ -18,7 +18,8 @@ import java.util.Arrays;
 public class Test {
 
     public static void main(String[] args) {
-        System.out.println(System.getProperty("os.name"));
+      Testenum one = Testenum.ONE;
+      System.out.println(System.getProperty("os.name"));
         Path p = Paths.get("src").toAbsolutePath();
         System.out.println(Files.exists(p));
       Arrays.asList();

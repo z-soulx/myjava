@@ -3,6 +3,7 @@ package com.example.javabase.java.lock;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -46,9 +47,15 @@ public class LockTest {
 			e.printStackTrace();
 		}
 		System.out.println("33");
+
 		re.lock();
 		re.unlock();
-
+		Condition condition = re.newCondition();
+		try {
+			condition.await();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		System.out.println();
 	}
 

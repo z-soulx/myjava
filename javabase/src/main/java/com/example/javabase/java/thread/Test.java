@@ -1,5 +1,6 @@
 package com.example.javabase.java.thread;
 
+import com.example.javabase.java.base.A;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -11,7 +12,8 @@ import java.util.concurrent.locks.ReentrantLock;
  **/
 public class Test {
     public static void main(String[] args) {
-
+    ThreadLocal<A> l  = new ThreadLocal<>();
+    l.set(new A());
 
     }
 

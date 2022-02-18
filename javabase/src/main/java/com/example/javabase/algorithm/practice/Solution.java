@@ -1,5 +1,6 @@
 package com.example.javabase.algorithm.practice;
 
+import com.example.javabase.algorithm.Leecode.structure.ListNode;
 import org.junit.Test;
 
 /**
@@ -88,11 +89,5 @@ public class Solution {
         return head;
     }
 
-     public class ListNode {
-     int val;
-      ListNode next;
-      ListNode() {}
-     ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-  }
+
 }
