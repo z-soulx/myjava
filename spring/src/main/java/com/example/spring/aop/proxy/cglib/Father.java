@@ -1,4 +1,4 @@
-package com.example.javabase.java.base;
+package com.example.spring.aop.proxy.cglib;
 
 /**
  * @program: myjava

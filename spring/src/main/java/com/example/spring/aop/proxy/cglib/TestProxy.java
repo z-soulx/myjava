@@ -3,6 +3,7 @@ package com.example.spring.aop.proxy.cglib;
 import net.sf.cglib.core.DebuggingClassWriter;
 
 import java.lang.reflect.Field;
+import org.junit.Test;
 
 /**
  * @program: spring
@@ -35,15 +36,25 @@ public class TestProxy {
         HelloImpl helloProxy = cglibProxy.getProxy(HelloImpl.class);
         //之所以两遍 是因为 代理的嵌套 代理方式一 就会这样
         helloProxy.add();
-
 //        helloProxy.ftest();
+//        helloProxy.ftest3();
 //
-        helloProxy.say("dada");
+//        helloProxy.say("dada");
         System.out.println("=========CGLIB$CALLBACK_0==========");
         Field h = helloProxy.getClass().getDeclaredField("CGLIB$CALLBACK_0");
         h.setAccessible(true);
         Object obj = h.get(helloProxy);
         System.out.println(obj.getClass());
 
+    }
+
+    /**
+     * 手动实现
+     * 利用 cglib代理原理
+     */
+    @Test
+    public void M(){
+        Father a = new Son();
+        a.say();
     }
 }

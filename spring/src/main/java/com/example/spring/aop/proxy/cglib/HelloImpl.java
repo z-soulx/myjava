@@ -21,4 +21,11 @@ public class HelloImpl {
     public final void ftest() {
         System.out.println("ftest");
     }
+    public  void ftest3() {
+        ftest2();
+        System.out.println("ftest");
+    }
+    private   void ftest2() {
+        System.out.println("ftest2");
+    }
 }

@@ -5,7 +5,10 @@ package com.example.javabase.java.base;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * @program: javabase
@@ -16,13 +19,10 @@ import java.util.Arrays;
 
 
 public class Test {
-
+  static char c;
     public static void main(String[] args) {
-      Testenum one = Testenum.ONE;
-      System.out.println(System.getProperty("os.name"));
-        Path p = Paths.get("src").toAbsolutePath();
-        System.out.println(Files.exists(p));
-      Arrays.asList();
+     Father a = new Son();
+     a.say();
     }
 
   public <T>void Fx(T t){

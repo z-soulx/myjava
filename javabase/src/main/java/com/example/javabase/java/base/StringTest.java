@@ -23,7 +23,7 @@ public class StringTest {
 	}
 
 	public static void main(String[] args) {
-		new StringTest().inter();
+//		new StringTest().inter();
 //		String s = new String("1s");
 //		s.intern();
 //		String s2 = "1s";
@@ -33,5 +33,10 @@ public class StringTest {
 //		String s4 = "1s1s";
 //		System.out.println(s3 == s4);
 //		System.out.println(intern == s4);
+    String s1 = "ab";
+		String s = new String("ab");
+		String intern = s.intern();
+		System.out.println(s == "ab");
+		System.out.println(intern == "ab");
 	}
 }

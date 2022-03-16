@@ -1,6 +1,15 @@
 package com.example.javabase.algorithm.Leecode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Set;
+import java.util.Stack;
 import org.junit.Test;
 
 /**
@@ -13,42 +22,41 @@ public class T extends Solution {
 
 
 	public static void main(String[] args) {
-
-
+//		new HashMap<>().containsKey()
 	}
+
+
 
 	@Test
 	public void test() {
-		int[] a = {0, 0, 0, 0,0, 1};
-		int[] b = {1, 0, 0, 0,0, 0};
-
-		System.out.println(s(a,b));
-
+		String bbbab = longestPalindromeSubseq("bbbab");
+		System.out.println(bbbab);
 	}
+	public String longestPalindromeSubseq(String s) {
+		boolean[][] dp = new boolean[s.length() ][s.length()];
+		int max  = 1;
+		int start = 0;
+		for (int i = s.length() - 1; i >= 0 ; i--) {
+			for (int j = i; j < s.length() ; j++) {
+				if (s.charAt(i) == s.charAt(j) ) {
+					if (j - i + 1 <= 3) {
+						dp[i][j] = true;
+					} else {
+						dp[i][j] = dp[i + 1][j - 1];
+					}
+				}
+				if (dp[i][j] && j - i + 1 > max) {
+					start = i;
+					max = j - i + 1;
+				}
 
-	public int s(int[] a, int[] b) {
-		int[][] dp = new int[a.length][b.length];
-    for (int k = 0; k < a.length; k++) {
-    	if (a[0] == b[k])  {
-    		dp[0][k] = 1;
-	    }
-    	if (a[k] == b[0]) {
-    		dp[k][0] = 1;
-	    }
+			}
+
 		}
-   int max = 0;
-    for (int i = 1; i < a.length; i++) {
-    	for (int j = 1; j < b.length; j++) {
-    		 if (a[i] == b[j]) {
-			     dp[i][j] = dp[i - 1][j - 1] + 1;
-		     } else  {
-    		 	dp[i][j] = 0;
-		     }
-		    max = Math.max(max,dp[i][j]);
-	    }
-    }
-    return max;
+
+		return s.substring(start,start + max);
 	}
+
 
 
 

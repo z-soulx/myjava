@@ -1,4 +1,4 @@
-package com.example.javabase.java.base;
+package com.example.spring.aop.proxy.cglib;
 
 import org.junit.Test;
 
@@ -27,7 +27,7 @@ public class Son  extends Father{
 	@Override
 	public void holle(){
 		System.out.println("before2");
-		System.out.println("haha2");
+		super.holle();
 		System.out.println("end2");
 	}
 }
