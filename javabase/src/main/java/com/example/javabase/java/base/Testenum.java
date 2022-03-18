@@ -1,13 +1,26 @@
 package com.example.javabase.java.base;
 
-public  enum  Testenum {
-	ONE{
+public  enum   Testenum {
+	 ONE{
 		@Override
-		  void absFind() {
+		void absFind() {
+
+		}
+	},
+	TWO("ss"){
+		@Override
+		void absFind() {
 
 		}
 	};
+    private String a;
 
+	Testenum(String a) {
+		this.a = a;
+	}
 
-	 abstract void absFind();
+	Testenum() {
+	}
+
+	abstract void absFind();
 }

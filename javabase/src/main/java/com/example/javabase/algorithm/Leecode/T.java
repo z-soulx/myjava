@@ -1,5 +1,6 @@
 package com.example.javabase.algorithm.Leecode;
 
+import com.google.common.util.concurrent.RateLimiter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -10,6 +11,8 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.Stack;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import org.junit.Test;
 
 /**
@@ -21,41 +24,30 @@ import org.junit.Test;
 public class T extends Solution {
 
 
-	public static void main(String[] args) {
-//		new HashMap<>().containsKey()
-	}
+
 
 
 
 	@Test
 	public void test() {
-		String bbbab = longestPalindromeSubseq("bbbab");
-		System.out.println(bbbab);
-	}
-	public String longestPalindromeSubseq(String s) {
-		boolean[][] dp = new boolean[s.length() ][s.length()];
-		int max  = 1;
-		int start = 0;
-		for (int i = s.length() - 1; i >= 0 ; i--) {
-			for (int j = i; j < s.length() ; j++) {
-				if (s.charAt(i) == s.charAt(j) ) {
-					if (j - i + 1 <= 3) {
-						dp[i][j] = true;
-					} else {
-						dp[i][j] = dp[i + 1][j - 1];
-					}
-				}
-				if (dp[i][j] && j - i + 1 > max) {
-					start = i;
-					max = j - i + 1;
-				}
+		int[] nums = {-1,1,1,3};
 
+		int tar = 2;
+		int l = 0, r = nums.length - 1;
+		while (l + 1 < r) {
+			int mid = l + (r - l) / 2;
+			if (tar > nums[mid]) {
+				l = mid;
+			} else {
+				r = mid;
 			}
-
 		}
-
-		return s.substring(start,start + max);
+		System.out.println( l +"___" + r);
 	}
+
+
+
+
 
 
 
