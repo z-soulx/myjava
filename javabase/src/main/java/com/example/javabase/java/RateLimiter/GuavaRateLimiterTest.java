@@ -14,7 +14,7 @@ public class GuavaRateLimiterTest {
 
 	/**
 	 *
-	 *  后一个线程 阻塞时长 为 上一个获取令牌预支所欠下的时长，若没有欠则不会等待
+	 *  后一个线程 等待时长 为 上一个获取令牌预支所欠下的时长，若没有欠则不会等待
 	 * @param args
 	 * @throws InterruptedException
 	 */
