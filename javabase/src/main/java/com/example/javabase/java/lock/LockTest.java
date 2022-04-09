@@ -66,8 +66,28 @@ public class LockTest {
 	public void CountDownLatch(){
 		CountDownLatch l = new CountDownLatch(2);
 		try {
-			l.await();
+			new Thread(()->{
+				try {
+					l.await();
+					System.out.println("TT");
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}).start();
+			System.out.println("TT1");
+			new Thread(()->{
+				try {
+					Thread.sleep(2000);
+					l.countDown();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}).start();
 			l.countDown();
+			System.out.println("-1");
+			l.await();
+			Thread.sleep(1000);
+			System.out.println("end");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

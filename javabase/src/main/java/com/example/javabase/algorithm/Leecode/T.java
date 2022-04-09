@@ -30,19 +30,27 @@ public class T extends Solution {
 
 	@Test
 	public void test() {
-		int[] nums = {-1,1,1,3};
+		compareVersion("0.1",
+				"1.1"
+		);
+	}
 
-		int tar = 2;
-		int l = 0, r = nums.length - 1;
-		while (l + 1 < r) {
-			int mid = l + (r - l) / 2;
-			if (tar > nums[mid]) {
-				l = mid;
-			} else {
-				r = mid;
+	public int compareVersion(String version1, String version2) {
+
+		String[] v1 = version1.split("\\.");
+		String[] v2 = version2.split("\\.");
+		for (int i = 0; i < Math.min(v1.length,v2.length);i++) {
+			if (cp(v1[i]) > cp(v2[i])) {
+				return 1;
+			}
+			if (cp(v1[i]) < cp(v2[i])) {
+				return -1;
 			}
 		}
-		System.out.println( l +"___" + r);
+		return 0;
+	}
+	public int cp(String s){
+		return Integer.valueOf(s);
 	}
 
 

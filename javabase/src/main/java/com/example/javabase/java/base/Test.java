@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @program: javabase
@@ -36,13 +38,19 @@ public class Test {
 /**
  *  编译期常量 初始化问题
  */
-  public void t(){
+  public void t() throws InterruptedException {
+  ReentrantLock lo = new ReentrantLock();
+  Condition condition = lo.newCondition();
+  condition.await();
+
+  System.out.println("end");
 
 //  System.out.println(A.ii);
   System.out.println(A.a);
   System.out.println();
 
-//  System.out.println(A.i);
+
+  System.out.println("end");
 }
 
 
