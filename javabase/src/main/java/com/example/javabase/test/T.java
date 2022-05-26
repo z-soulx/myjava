@@ -20,7 +20,10 @@ import java.util.stream.Stream;
  **/
 public class T {
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
-
+        BitSet s = new BitSet();
+   s.set(5);
+        System.out.println(s.get(5));
+        System.out.println(s.get(6));
     }
     class BitMap {
         Integer age;

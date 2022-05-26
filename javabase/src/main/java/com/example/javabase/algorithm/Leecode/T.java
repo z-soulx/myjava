@@ -1,5 +1,7 @@
 package com.example.javabase.algorithm.Leecode;
 
+import com.example.javabase.algorithm.Leecode.structure.ListNode;
+import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.RateLimiter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +12,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.Stack;
+import java.util.TreeSet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.junit.Test;
@@ -53,6 +57,11 @@ public class T extends Solution {
 		return Integer.valueOf(s);
 	}
 
+	public static void main(String[] args) {
+		List objects = Lists.newArrayList(1,2,3);
+		List list = objects.subList(1, 3);
+		System.out.println(list);
+	}
 
 
 
