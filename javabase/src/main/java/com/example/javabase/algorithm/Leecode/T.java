@@ -34,9 +34,8 @@ public class T extends Solution {
 
 	@Test
 	public void test() {
-		compareVersion("0.1",
-				"1.1"
-		);
+		List list = new ArrayList();
+//		list.remove()
 	}
 
 	public int compareVersion(String version1, String version2) {

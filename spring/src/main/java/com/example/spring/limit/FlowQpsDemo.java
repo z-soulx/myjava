@@ -6,6 +6,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
+import com.alibaba.csp.sentinel.slots.statistic.metric.ArrayMetric;
 import com.alibaba.csp.sentinel.util.TimeUtil;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @program: myjava
- * @description:
+ * @description: https://juejin.cn/post/6982856153105432589
+ * @see com.alibaba.csp.sentinel.slots.statistic.base.LeapArray#currentWindow(long) 计算
+ * @see ArrayMetric#pass()  汇总pass数据：所有样本窗口
  * @author: soulx
  * @create: 2022-05-13 10:52
  **/
