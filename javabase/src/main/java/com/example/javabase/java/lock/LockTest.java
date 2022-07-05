@@ -66,6 +66,18 @@ public class LockTest {
 	public void CountDownLatch(){
 		CountDownLatch l = new CountDownLatch(2);
 		try {
+
+			new Thread(()->{
+				try {
+					System.out.println("任务2");
+					Thread.sleep(2000);
+					l.await();
+					System.out.println("任务2等待结束");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}).start();
+
 			new Thread(()->{
 				try {
 					l.await();
@@ -74,7 +86,9 @@ public class LockTest {
 					e.printStackTrace();
 				}
 			}).start();
+
 			System.out.println("TT1");
+
 			new Thread(()->{
 				try {
 					Thread.sleep(2000);
@@ -83,10 +97,11 @@ public class LockTest {
 					e.printStackTrace();
 				}
 			}).start();
+
 			l.countDown();
 			System.out.println("-1");
 			l.await();
-			Thread.sleep(1000);
+//			Thread.sleep(1000);
 			System.out.println("end");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -114,10 +129,20 @@ public class LockTest {
 	 * ws==0和!compareAndSetWaitStatus(h, 0, Node.PROPAGATE) 是两个矛盾的场景，
 	 */
 	public void Semaphore(){
-		Semaphore l = new Semaphore(1);
+		Semaphore l = new Semaphore(2);
 		try {
+			// 多次次release方法
+//			l.release(100);
+//			l.acquire(3);
+
+			// 一个线程重复调用11次acquire方法
 			l.acquire();
 			l.acquire();
+			l.acquire();
+			System.out.println("获取");
+
+			l.acquire();
+			System.out.println("获取2");
 			l.release();
 		} catch (Exception e) {
 			e.printStackTrace();

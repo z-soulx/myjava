@@ -53,6 +53,20 @@ public class Test {
   System.out.println("end");
 }
 
+@org.junit.Test
+public void anyTest(){
+Deque<Integer> stack = new LinkedList<>();
+  stack.push(1);
+  stack.push(2);
+  stack.push(3);
+  stack.peek();
+  ArrayList<Integer> l = new ArrayList<>(stack);
+
+  int[] ints = l.stream().mapToInt(Integer::valueOf).toArray();
+  System.out.println(Arrays.toString(ints));
+
+}
+
 
 }
 
