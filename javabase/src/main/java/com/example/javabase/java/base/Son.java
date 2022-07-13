@@ -10,7 +10,7 @@ import org.junit.Test;
  **/
 public class Son  extends Father{
     public  int num = 2;
-
+	public static String name = "son";
     @Test
 	public void t() {
 		System.out.println(super.num);;

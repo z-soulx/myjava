@@ -8,6 +8,7 @@ package com.example.javabase.java.base;
  **/
 public  class Father {
   public  final int num = 1;
+  public static String name = "father";
   public void say(){
     holle();
     System.out.println("haha");

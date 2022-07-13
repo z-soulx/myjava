@@ -8,7 +8,14 @@ package com.example.javabase.java.base;
  **/
 public  abstract class Tabs {
      public     int s = 1;
+     public  static String name = "sss";
+     static {
+          System.out.println("Tabs");
+     }
 
+     public static void sys(){
 
+          System.out.println("sys-Tabs");
+     }
 }
 

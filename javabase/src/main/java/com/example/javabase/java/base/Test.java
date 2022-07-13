@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -23,9 +24,33 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Test {
   static char c;
     public static void main(String[] args) {
-     Father a = new Son();
-     a.say();
+      Tabstract2.sys();
+//      System.out.println(Tabs.name);
+//      System.out.println(Father.name);
+//      System.out.println(Son.name);
+//      Son.name = "xxxx";
+//      System.out.println(Father.name);
+//      System.out.println(Son.name);
+
+//     Father a = new Son();
+//     a.say();
     }
+
+    @org.junit.Test
+  public  void testAbstract() {
+//    System.out.println(Tabstract.name2);
+//    System.out.println(Tabs.name);
+//    System.out.println(Tabstract2.name);
+
+//    System.out.println(Tabstract.name);
+//    Tabstract2.name = "xxxx";
+//    System.out.println(Tabstract.name);
+//    System.out.println(Tabstract2.name);
+
+//      System.out.println(Tabstract2.name);
+      Tabstract2.sys();
+//      Tabstract2.sys2();
+  }
 
   public <T>void Fx(T t){
         if( t instanceof Test){
@@ -61,11 +86,12 @@ Deque<Integer> stack = new LinkedList<>();
   stack.push(3);
   stack.peek();
   ArrayList<Integer> l = new ArrayList<>(stack);
-
+  LinkedList ls = new LinkedList();
   int[] ints = l.stream().mapToInt(Integer::valueOf).toArray();
   System.out.println(Arrays.toString(ints));
 
 }
+
 
 
 }

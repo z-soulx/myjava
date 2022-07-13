@@ -9,8 +9,10 @@ import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.Stack;
@@ -36,6 +38,11 @@ public class T extends Solution {
 	public void test() {
 		List list = new ArrayList();
 //		list.remove()
+		Queue<TreeNode> queue = new LinkedList<>();
+		queue.offer(null);
+		queue.offer(null);
+		queue.offer(null);
+		System.out.println(queue.isEmpty());
 	}
 
 	public int compareVersion(String version1, String version2) {
