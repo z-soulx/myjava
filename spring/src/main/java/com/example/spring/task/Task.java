@@ -1,4 +1,4 @@
-package task;
+package com.example.spring.task;
 
 import org.springframework.scheduling.annotation.Async;
 

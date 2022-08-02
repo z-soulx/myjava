@@ -1,4 +1,4 @@
-package task;
+package com.example.spring.task;
 
 import com.example.spring.base.SimpleBean;
 import com.example.spring.base.SimpleBeanFactoryPostProcessor;
