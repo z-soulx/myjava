@@ -70,6 +70,7 @@ public class TestThreadPool {
 	/**
 	 * 测试 线程池中超过核心线程的    是持续一定时间后被回收  还是一定时间没有任务生产 才被回收
 	 * https://segmentfault.com/a/1190000039815066
+	 *
 	 */
 	@Test
 	public void testExecutorService() throws InterruptedException {
@@ -106,9 +107,17 @@ public class TestThreadPool {
 		Thread.sleep(10000);
 
 		//每隔3秒提交一个任务
+
+//		while (true) {
+//			Thread.sleep(3000);
+//			executorService.submit(new Task());
+//		}
+		/**
+		 * 验证是否 core线程是否固定  结论 没有固定的核心线程
+		 */
 		int n = 0;
 		while (true) {
-			if (n < 3) {
+			if (n < 3 || n > 7) {
 				Thread.sleep(3000);
 			} else  {
 				if (n <5) {
