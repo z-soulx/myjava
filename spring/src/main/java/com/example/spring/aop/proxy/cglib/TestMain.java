@@ -37,7 +37,7 @@ public class TestMain {
 
 
         public void print() {
-            System.out.println(this);
+            System.out.println(this.getClass());
             System.out.println("i am printing something");
             t();
         }

@@ -24,6 +24,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Test {
   static char c;
     public static void main(String[] args) {
+      System.out.println(-0);
       Tabstract2.sys();
 //      System.out.println(Tabs.name);
 //      System.out.println(Father.name);
@@ -92,6 +93,21 @@ Deque<Integer> stack = new LinkedList<>();
 
 }
 
+
+public  Integer as2;
+  public  static  Integer as;
+  /**
+   * 测试内部类 static
+   */
+    class CC {
+
+    A a;
+
+    public  void main() {
+      System.out.println(as);
+      System.out.println(as2);
+    }
+}
 
 
 }

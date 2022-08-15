@@ -10,6 +10,7 @@ import org.junit.Test;
  **/
 public class Son  extends Father{
     public  int num = 2;
+//    public  int id = 2;
 	public static String name = "son";
     @Test
 	public void t() {
@@ -29,5 +30,15 @@ public class Son  extends Father{
 		System.out.println("before2");
 		System.out.println("haha2");
 		System.out.println("end2");
+	}
+	private   void ssss(){
+
+	}
+
+	@Test
+	public  void mains() {
+		System.out.println(id);
+//		System.out.println(sid);
+//		System.out.println(super.id);
 	}
 }

@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.Async;
  **/
 public class Tt {
 
-	@Async(value = )
+//	@Async(value = )
 	public static void main(String[] args) {
 		IntObjectHashMap m = new IntObjectHashMap();
 
