@@ -48,13 +48,4 @@ public class TestProxy {
 
     }
 
-    /**
-     * 手动实现
-     * 利用 cglib代理原理
-     */
-    @Test
-    public void M(){
-        Father a = new Son();
-        a.say();
-    }
 }

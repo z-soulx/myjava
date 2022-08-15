@@ -12,6 +12,7 @@ import net.sf.cglib.proxy.MethodProxy;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import org.junit.Test;
 
 
 public class TestMain {
@@ -31,6 +32,17 @@ public class TestMain {
 //        System.out.println("\n\n\n");
 //        tb2.printlt();
     }
+
+    /**
+     * 手动实现
+     * 利用 cglib代理原理
+     */
+    @Test
+    public void M(){
+        Father a = new Son();
+        a.say();
+    }
+
 
     // 被代理类
     static class TestBean {
