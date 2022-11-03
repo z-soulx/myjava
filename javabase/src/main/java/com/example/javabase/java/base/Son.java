@@ -12,7 +12,10 @@ public class Son  extends Father{
     public  int num = 2;
 //    public  int id = 2;
 	public static String name = "son";
-    @Test
+
+
+
+	@Test
 	public void t() {
 		System.out.println(super.num);;
 //		System.out.println(num);

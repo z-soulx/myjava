@@ -38,7 +38,13 @@ public class ExecutorTest {
 			});
 		}
 
-		ExecutorService executor = Executors.newFixedThreadPool(2);
+//		Thread es = new Thread(()->{
+//			System.out.println("sssss");
+//		},"sss");
+//		es.start();
+
+
+		ExecutorService executor = Executors.newFixedThreadPool(3);
 		Thread executorInvokerThread = new Thread(() -> {
 			try {
 				executor.invokeAll(tasks);
@@ -52,7 +58,9 @@ public class ExecutorTest {
 
 		Thread
 				.sleep(800);
-		executor.shutdown();
+		System.out.println("end");
+
+//		executor.shutdown();
 //		System.out.println("shutdown");
 //		executor.shutdownNow();
 //		System.out.println("shutdown complete");

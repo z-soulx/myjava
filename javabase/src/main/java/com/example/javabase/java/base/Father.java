@@ -16,6 +16,10 @@ public  class Father {
     System.out.println("haha");
   }
 
+//  private Father() {
+     //私有构造不能被继承
+//  }
+
   public void holle(){
     System.out.println("haha2");
   }

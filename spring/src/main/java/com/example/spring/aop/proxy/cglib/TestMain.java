@@ -28,13 +28,14 @@ public class TestMain {
 
 //        TestBean tb2 = (TestBean) Enhancer.create(TestBean.class, new TBProxyx(new TestBean()));
 
-        tb1.print();
+//        tb1.print();
+        tb1.print2();
 //        System.out.println("\n\n\n");
 //        tb2.printlt();
     }
 
     /**
-     * 手动实现
+     * 手动实现InputStream
      * 利用 cglib代理原理
      */
     @Test
@@ -48,7 +49,12 @@ public class TestMain {
     static class TestBean {
 
 
-        public void print() {
+        public  void print() {
+            System.out.println(this.getClass());
+            System.out.println("i am printing something");
+            t();
+        }
+        public final void print2() {
             System.out.println(this.getClass());
             System.out.println("i am printing something");
             t();

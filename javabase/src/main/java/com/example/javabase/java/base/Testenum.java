@@ -1,13 +1,23 @@
 package com.example.javabase.java.base;
 
-public  enum   Testenum {
+public  enum   Testenum  implements InFTest{
 	 ONE{
-		@Override
+		 @Override
+		 public String tt() {
+			 return null;
+		 }
+
+		 @Override
 		void absFind() {
 
 		}
 	},
 	TWO("ss"){
+		@Override
+		public String tt() {
+			return null;
+		}
+
 		@Override
 		void absFind() {
 

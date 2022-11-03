@@ -36,7 +36,6 @@ public class VolatileExample {
 		Thread.sleep(1);
 		while (!flag) {
 			i++;
-
 			Thread.sleep(3000);
 //			if (i > 10)
 //			lock.lock();

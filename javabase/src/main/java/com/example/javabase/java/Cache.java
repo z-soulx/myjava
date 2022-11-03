@@ -19,6 +19,13 @@ public class Cache {
 
 	public static final Map<String, Future<Integer>> SCORE_CACHE = new ConcurrentHashMap<>();
 
+	/**
+	 * 查询
+	 *
+	 * @param userName 用户名
+	 * @return {@link Integer}
+	 * @throws Exception 异常
+	 */
 	public Integer query(String userName) throws Exception {
 		while (true) {
 			Future<Integer> future = SCORE_CACHE.get(userName);

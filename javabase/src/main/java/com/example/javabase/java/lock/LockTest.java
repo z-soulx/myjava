@@ -61,6 +61,27 @@ public class LockTest {
 
 	@Test
 	/**
+	 * ReadWriteLock
+	 */
+	public void ReadWriteLock() {
+		ReadWriteLock l = new ReentrantReadWriteLock();
+		Lock read = l.readLock();
+//		Condition condition = read.newCondition(); // 不支持
+		Lock write = l.writeLock();
+		Condition condition1 = write.newCondition();
+		try {
+			read.lock();
+			read.unlock();
+			write.lock();
+			write.unlock();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	/**
 	 * CountDownLatch
 	 */
 	public void CountDownLatch(){
@@ -149,22 +170,5 @@ public class LockTest {
 		}
 	}
 
-	@Test
-	/**
-	 * ReadWriteLock
-	 */
-	public void ReadWriteLock(){
-		ReadWriteLock l = new ReentrantReadWriteLock();
-		Lock read = l.readLock();
-		Lock write = l.writeLock();
-		try {
-			read.lock();
-			read.unlock();
-			write.lock();
-			write.unlock();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }

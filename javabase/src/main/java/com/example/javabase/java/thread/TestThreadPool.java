@@ -62,7 +62,7 @@ public class TestThreadPool {
 	public void allowCoreThreadTimeOut(){
 		ThreadPoolExecutor t = new ThreadPoolExecutor(2,3,0,TimeUnit.SECONDS,new ArrayBlockingQueue(2),
 				new DefaultThreadFactory("ss",false),new AbortPolicy());
-//   t.allowCoreThreadTimeOut();
+   t.allowCoreThreadTimeOut(true);
 //   t.execute();
 
 	}

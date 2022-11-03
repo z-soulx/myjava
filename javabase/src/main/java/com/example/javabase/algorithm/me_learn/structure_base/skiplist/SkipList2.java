@@ -1,11 +1,14 @@
 package com.example.javabase.algorithm.me_learn.structure_base.skiplist;
 
 import java.util.Random;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
  * 1，跳表的一种实现方法，用于练习。跳表中存储的是正整数，并且存储的是不重复的。
  * 2，本类是参考作者zheng ，自己学习，优化了添加方法
- * 3，看完这个，我觉得再看ConcurrentSkipListMap 源码，会有很大收获
+ * 3，看完这个，我觉得再看
+ * @see  ConcurrentSkipListMap
+ * 源码，会有很大收获
  * Author：ldb
  */
 public class SkipList2 {
