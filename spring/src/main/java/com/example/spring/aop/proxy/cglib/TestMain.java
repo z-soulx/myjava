@@ -57,6 +57,7 @@ public class TestMain {
         public final void print2() {
             System.out.println(this.getClass());
             System.out.println("i am printing something");
+//            super.t() 该方法没有super，所以语法错误
             t();
         }
 

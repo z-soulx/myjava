@@ -15,4 +15,8 @@ public  enum SingletoneENUM {
 		System.out.println("enum loading...");
 	}
 	 abstract void s();
+
+	public void sys() {
+		System.out.println("sss");
+	}
 }

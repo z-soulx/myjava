@@ -12,6 +12,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor.AbortPolicy;
 import java.util.concurrent.TimeUnit;
@@ -31,6 +32,13 @@ public class TestThreadPool {
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) throws InterruptedException {
+		main2(args);
+//		main1();
+		return;
+
+	}
+
+	public static void main1() throws InterruptedException {
 		RuntimeMXBean runtimeBean = ManagementFactory.getRuntimeMXBean();
 		String jvmName = runtimeBean.getName();
 		System.out.println("JVM Name = " + jvmName);
@@ -53,7 +61,6 @@ public class TestThreadPool {
 			System.out.println("线程总数为 = " + bean.getThreadCount());
 			Thread.sleep(3000);
 		}
-
 	}
 
 	/**
@@ -146,5 +153,16 @@ public class TestThreadPool {
 			}
 			System.out.println(Thread.currentThread() + "-执行任务");
 		}
+	}
+
+
+	public static void main2(String[] args) {
+		ScheduledExecutorService e = Executors.newScheduledThreadPool(0);
+		e.schedule(() -> {
+			System.out.println("业务逻辑");
+		}, 3, TimeUnit.SECONDS);
+
+
+		e.shutdown();
 	}
 }

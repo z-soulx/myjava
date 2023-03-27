@@ -10,8 +10,14 @@ public interface InFTest {
 	public static final int a = 2;
 	public abstract String tt();
 
-	public static class Tee{
+	// 可以被继承
+	public static   class Tee{
 
 	}
+	// 不可以被继承
+	public static  final class Tee2{
+
+	}
+
 
 }

@@ -3,6 +3,7 @@ package com.example.javabase.java.thread;
 import com.example.javabase.java.base.A;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
+import lombok.SneakyThrows;
 
 /**
  * @program: java-base
@@ -11,11 +12,59 @@ import java.util.concurrent.locks.ReentrantLock;
  * @create: 2020-02-09 11:28
  **/
 public class Test {
-    public static void main(String[] args) {
-    ThreadLocal<A> l  = new ThreadLocal<>();
-    l.set(new A());
+    public static void main(String[] args) throws InterruptedException {
+    Thread thread = new Thread( new Runnable() {
+        @SneakyThrows
+        @Override
+        public void run() {
+            System.out.println(
+                "demo"
+            );
+            Thread.sleep(1000);
+            System.out.println("1");
+
+        }
+    },"test-zx");
+        thread.join();
+
+        thread.setDaemon(true);
+
+
+        thread.start();
+        new Thread(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                System.out.println("k");
+                synchronized (thread) {
+                    System.out.println("拿到锁");
+                    Thread.sleep(6000);
+                }
+                System.out.println("end");
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                System.out.println("k2");
+                synchronized (thread) {
+                    System.out.println("拿到锁2");
+//                    Thread.sleep(3000);
+                }
+                System.out.println("end2");
+            }
+        }).start();
+//        Thread.sleep(50);
+        System.out.println(
+            -1
+        );
+        Thread.sleep(100000);
 
     }
+
+
 
     @org.junit.Test
     /**

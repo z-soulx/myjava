@@ -10,10 +10,12 @@ import org.junit.Test;
  **/
 public class Son  extends Father{
     public  int num = 2;
-//    public  int id = 2;
-	public static String name = "son";
+    public  String id = "2";
+//	public static String name = "son";
 
-
+  static {
+	  System.out.println("static-son");
+  }
 
 	@Test
 	public void t() {
@@ -34,9 +36,13 @@ public class Son  extends Father{
 		System.out.println("haha2");
 		System.out.println("end2");
 	}
-	private   void ssss(){
-
+	public  void finalFf(){
+		System.out.println("son");
 	}
+
+//	public static void staticFf(){
+//		System.out.println("son");
+//	}
 
 	@Test
 	public  void mains() {
