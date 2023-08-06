@@ -21,6 +21,7 @@
 <!--——————————————模块 ——————————————————————————————————————————-->
   <modules>
    <module>javabase</module>
+   <module>spring</module>
   </modules>
 
   <properties>
