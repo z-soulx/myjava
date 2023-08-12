@@ -10,7 +10,7 @@ public class TestHotDeploy {
     static Object instance;
     public static void main(String[] args) throws Exception {
 
-        CustomClassLoader loader = new CustomClassLoader("D:\\");
+        CustomClassLoader2 loader = new CustomClassLoader2("D:\\");
         Class<?> cls = loader.loadClass("HelloWorld");
         instance = cls.getDeclaredConstructor().newInstance();
             Method sayHelloMethod = cls.getDeclaredMethod("sayHello");
