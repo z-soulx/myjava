@@ -12,7 +12,7 @@ import org.springframework.core.type.AnnotationMetadata;
 @Configuration
 public class StudentConfig implements ImportAware {
 
-    @Bean
+    @Bean("student3")
     @Scope("prototype")
     public Student student() {
         Student student = new Student();

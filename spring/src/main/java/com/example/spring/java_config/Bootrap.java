@@ -13,7 +13,9 @@ public class Bootrap {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SimpleBeanConfig.class);
         SimpleBean simpleBean = context.getBean(SimpleBean.class);
-        System.out.println(simpleBean.getStudent().getName());
+        SimpleBean simpleBean2 = context.getBean(SimpleBean.class);
+        System.out.println(simpleBean.toString());
+        System.out.println(simpleBean2.toString());
         System.out.println(Arrays.toString(context.getBeanDefinitionNames()));
     }
 

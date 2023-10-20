@@ -19,7 +19,7 @@ public class SimpleBeanConfig {
     @Autowired
     private java_config.StudentConfig studentConfig;
 
-    @Bean
+    @Bean("simpleBean2")
     public SimpleBean simpleBean() {
         SimpleBean simpleBean = new SimpleBean(studentConfig.student());
         return simpleBean;

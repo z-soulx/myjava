@@ -2,6 +2,7 @@ package com.example.spring.base;
 
 import annotation.Init;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 public class SimpleBean {
 	//开启注解，不扫描只要生成bean都可以使用
 	@Autowired(required = false)
+	@Qualifier("student2")
 	private Student student;
 
     public SimpleBean() {}
