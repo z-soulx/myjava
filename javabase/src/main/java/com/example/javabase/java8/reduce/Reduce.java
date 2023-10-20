@@ -1,11 +1,12 @@
 package com.example.javabase.java8.reduce;
 
-import org.junit.Test;
+
 
 import java.util.ArrayList;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
+import org.junit.Test;
 
 /**
  * @program: java-base
