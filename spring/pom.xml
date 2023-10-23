@@ -94,12 +94,14 @@
       <artifactId>assertj-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-all</artifactId>
-      <version>4.1.68.Final</version>
-<!--      <version>4.1.73.Final</version>-->
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>6.0.18.Final</version>
     </dependency>
-
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

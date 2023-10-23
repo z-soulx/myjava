@@ -2,7 +2,7 @@ package com.example.spring.base;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("Student2")
 public class Student extends BaseStudent {
 
 	private String name;
