@@ -29,7 +29,7 @@ public class RangMapTest {
 //        System.out.printf(Range.openClosed(1,4).intersection(Range.closed(1,2)).toString());
 
         MyRangeMap<LocalDate, RangTestOb> map2 = MyRangeMap.create();
-        map2.put(Range.closed(LocalDate.now(),LocalDate.now().plusDays(3)),new RangTestOb(1));
+        map2.put(Range.closed(LocalDate.now(),LocalDate.now().plusDays(4)),new RangTestOb(1));
         map2.put(Range.closed(LocalDate.now(),LocalDate.now().plusDays(1)),new RangTestOb("qwe"));
         map2.put(Range.closed(LocalDate.now().plusDays(1),LocalDate.now().plusDays(2)),new RangTestOb("asd"));
         map2.asMapOfRanges().forEach((localDateRange, rangTestOb) -> {

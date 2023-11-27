@@ -28,7 +28,7 @@ public class MyRangeMap<K extends Comparable, V extends MyMerge>  {
         map.put(range,value);
         tmp.asMapOfRanges().forEach((kRange, v) -> {
                map.put(kRange,v.merge(value));
-            System.out.println(kRange.toString());
+//            System.out.println(kRange.toString());
         } );
 
     }

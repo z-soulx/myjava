@@ -1,6 +1,6 @@
 package com.example.javabase.Myguava.myrangeTest;
 
-import jodd.util.StringUtil;
+
 
 public class RangTestOb implements MyMerge<RangTestOb> {
     private String name;
@@ -45,7 +45,7 @@ public class RangTestOb implements MyMerge<RangTestOb> {
     public RangTestOb merge(RangTestOb o) {
         RangTestOb r = new RangTestOb();
 
-           r.name = !StringUtil.isEmpty(o.name) ? o.name : this.name;
+           r.name = null != o.name ? o.name : this.name;
 
 
             r.age = -1 != o.age ? o.age : this.age;
