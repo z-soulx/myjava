@@ -20,7 +20,7 @@
 
 <!--——————————————模块 ——————————————————————————————————————————-->
   <modules>
-   <module>javabase</module>
+<!--   <module>javabase</module>-->
    <module>spring</module>
   </modules>
 
@@ -73,11 +73,7 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>21.0</version>
-    </dependency>
+
 
 
   </dependencies>
@@ -92,6 +88,11 @@
         <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>21.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
