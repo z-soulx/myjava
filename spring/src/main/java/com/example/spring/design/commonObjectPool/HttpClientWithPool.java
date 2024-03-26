@@ -39,12 +39,12 @@ public class HttpClientWithPool {
 
     }
     public static ResponseData fetchData(String url) throws Exception {
-        HttpResponse<String> response = HttpUtil.sendRequest(url);
+        HttpResponse response = HttpUtil.sendRequest(url);
         ResponseData borrowedData = pool.borrowObject(); // 从池中借出一个对象
 
         // 在已存在的对象上反序列化JSON数据
         ObjectMapper mapper = new ObjectMapper();
-        mapper.readerForUpdating(borrowedData).readValue(response.body());
+        mapper.readerForUpdating(borrowedData).readValue(response.body().toString());
 
         // 假设在这里你不需要立即返回对象给池（依赖于你的使用场景）
          pool.returnObject(borrowedData);
