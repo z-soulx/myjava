@@ -15,7 +15,7 @@
     <groupId>com.soulx</groupId>
     <artifactId>myjava</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath/> <!-- lookup parent from repository -->
+<!--    <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
   </parent>
 
   <dependencies>
@@ -82,7 +82,7 @@
     <dependency>
       <groupId>com.alibaba.cloud</groupId>
       <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-      <version>2021.1</version>
+      <version>2021.0.4.0</version>
     </dependency>
     <dependency>
       <groupId>org.redisson</groupId>

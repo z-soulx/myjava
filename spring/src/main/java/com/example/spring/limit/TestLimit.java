@@ -1,8 +1,5 @@
 package com.example.spring.limit;
 
-import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
-import org.springframework.boot.autoconfigure.data.redis.RedisProperties.Sentinel;
-
 /**
  * @program: myjava
  * @description: 测试限流+学习
@@ -12,7 +9,6 @@ import org.springframework.boot.autoconfigure.data.redis.RedisProperties.Sentine
 public class TestLimit {
 
 	public static void main(String[] args) {
-
 
 	}
 

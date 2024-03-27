@@ -8,4 +8,7 @@ package com.example.spring.service;
  **/
 public class TestSe {
 
+	public TestSe() {
+		System.out.println("TestSe");
+	}
 }
