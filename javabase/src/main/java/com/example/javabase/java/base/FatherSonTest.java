@@ -13,9 +13,10 @@ public class FatherSonTest {
 	public static void main(String[] args) {
 		Father s = new Son();
 		Son s2 = new Son();
-		System.out.println(s.id);
-		System.out.println(s2.id);
-		s.holle();
+//		System.out.println(s.id);
+		s2.sayIdName();
+//		s.holle();
+		s2.saySonSay();
 
 
 		//===========

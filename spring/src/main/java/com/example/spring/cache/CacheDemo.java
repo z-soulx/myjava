@@ -2,6 +2,8 @@ package com.example.spring.cache;
 
 import com.google.common.cache.*;
 import com.google.common.util.concurrent.ListenableFuture;
+import org.caffinitas.ohc.OHCache;
+import org.caffinitas.ohc.OHCacheBuilder;
 import org.junit.Test;
 
 import java.util.Date;
@@ -90,5 +92,11 @@ public class CacheDemo {
                             }
                         });
 
+    }
+
+    @Test //堆外Cache
+    public void OHCache() {
+      OHCache<Object, Object> build = OHCacheBuilder.newBuilder().capacity(1024).build();
+      build.put("123",123);
     }
 }

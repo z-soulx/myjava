@@ -15,7 +15,7 @@
     <groupId>com.soulx</groupId>
     <artifactId>myjava</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-<!--    <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    <!--    <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
   </parent>
 
   <dependencies>
@@ -111,6 +111,11 @@
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
       <version>2.9.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.caffinitas.ohc</groupId>
+      <artifactId>ohc-core</artifactId>
+      <version>0.7.4</version>
     </dependency>
   </dependencies>
 

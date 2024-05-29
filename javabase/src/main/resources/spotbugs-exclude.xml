@@ -1,0 +1,10 @@
+<FindBugsFilter>
+  <!-- 忽略所有 RV_RETURN_VALUE_IGNORED 类型的警告 -->
+  <Match>
+<!--    <Bug pattern="SS_SHOULD_BE_STATIC"/> 会让整个match失效-->
+    <Bug pattern="URF_UNREAD_FIELD"/>
+  </Match>
+  <Match>
+    <Bug pattern="SS_SHOULD_BE_STATIC"/>
+  </Match>
+</FindBugsFilter>

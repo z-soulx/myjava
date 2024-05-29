@@ -21,12 +21,13 @@
 
   <dependencies>
 
-<!--        <dependency>-->
-<!--            <groupId>algs4</groupId>-->
-<!--            <artifactId>algs4</artifactId>-->
-<!--            <systemPath>${project.basedir}/src/main/java/com/example/javabase/algorithm/algorithm4/official/algs4.jar</systemPath>-->
-<!--            <scope>system</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>algs4</groupId>
+            <artifactId>algs4</artifactId>
+          <version>1.0.0</version>
+            <systemPath>${project.basedir}/src/main/java/com/example/javabase/algorithm/algorithm4/official/algs4.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>

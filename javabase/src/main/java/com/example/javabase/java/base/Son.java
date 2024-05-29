@@ -13,7 +13,11 @@ public class Son  extends Father{
     public  String id = "2";
 //	public static String name = "son";
 
-  static {
+	public Son() {
+		idName = "22";
+	}
+
+	static {
 	  System.out.println("static-son");
   }
 
@@ -25,6 +29,7 @@ public class Son  extends Father{
 
 	@Override
 	public void say(){
+		System.out.println("saysonsay");
 		System.out.println("before");
 		super.say();
 		System.out.println("end");
