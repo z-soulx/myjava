@@ -31,10 +31,43 @@ import java.util.Properties;
 
 public class KafkaTransactionDemo {
 
-	public static void main(String[] args) {
-		new KafkaTransactionDemo().consumerTransformProducer();
+	public static void main(String[] args) throws InterruptedException {
+		new KafkaTransactionDemo().testPoll();
 	}
+	public void testPoll() throws InterruptedException {
 
+		Consumer consumer = buildConsumer();
+		consumer.subscribe(Arrays.asList("test_CBS_topic"));
+	int i = 0;
+		while (true) {
+
+			// 5.1 接受消息
+			ConsumerRecords<String, String> records = consumer.poll(Duration.ofSeconds(2));
+
+			i++;
+			try {
+				// 5.2 do业务逻辑;
+				System.out.println("customer Message---"+i);
+				if (i > 5) {
+					System.out.println("sleep 999999999" + i);
+					Thread.sleep(999999999);
+				}
+				Map<TopicPartition, OffsetAndMetadata> commits = Maps.newHashMap();
+
+				for (ConsumerRecord<String, String> record : records) {
+					// 5.2.1 读取消息,并处理消息。print the offset,key and value for the consumer records.
+					// 此处为真正的处理消息，与步骤7的提交偏移量不在一个事务里面
+					System.out.printf(Thread.currentThread().getName() + ": partition = %d, offset = %d, key = %s, value = %s, timestamp = %s,timestampType = %s %n", record.partition(), record.offset(), record.key(), record.value(), record.timestamp(), record.timestampType());
+
+					// 5.2.2 记录提交的偏移量
+					commits.put(new TopicPartition(record.topic(), record.partition()), new OffsetAndMetadata(record.offset() + 1));
+				}
+
+			} catch (Exception e) {
+					e.printStackTrace();
+			}
+		}
+	}
 	/**
 	 * 在一个事务只有生产消息操作
 	 */
@@ -229,7 +262,7 @@ public class KafkaTransactionDemo {
 
 	public Consumer buildConsumer() {
 		Properties props = new Properties();
-		props.put("bootstrap.servers", "192.168.1.8:9092");
+		props.put("bootstrap.servers", "kafka.ops.17usoft.com:9092");
 		props.put("group.id", "test_group0111");
 		props.put("client.id", "consumer_01");
 		// 设置隔离级别

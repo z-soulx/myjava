@@ -1,11 +1,5 @@
 package com.example.javabase.design_patterns.my_code.chapter_11;
 
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.CORBA.portable.InvokeHandler;
-import org.omg.CORBA.portable.OutputStream;
-import org.omg.CORBA.portable.ResponseHandler;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
